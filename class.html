@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="rile.css">
+    <script>
+        // Get the audio element
+        var audio = document.getElementById("myAudio");
+
+        // Function to play the audio
+        function playAudio() {
+            audio.play();
+        }
+
+        // Function to pause the audio
+        function pauseAudio() {
+            audio.pause();
+        }
+
+        // Add event listeners for hover
+        var songContainer = document.getElementById("song-container");
+        songContainer.addEventListener("mouseenter", playAudio);
+        songContainer.addEventListener("mouseleave", pauseAudio);
+
+    </script>
+</head>
+<body>
+
+   
+    <div class="stars"></div>
+    <div class="clouds">
+
+        <div class="container" id = "song-container">
+            <div class="val">
+                <div class="envelope">
+                    <div class="card"><h1>&nbsp;&nbsp;Happy<br>Birthday</h1></div>
+                </div>
+                <div class="front"></div>
+            </div>
+            <audio id="myAudio" src="song.mp3"></audio>
+       </div> 
+    </div>
+
+    
+
+   
+</body>
+</html>

@@ -1,0 +1,127 @@
+@import "compass/reset";
+body{
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+	height: 100%;
+}
+
+
+
+.container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.container:hover{
+	transform: rotate3d();
+}
+
+.val{
+    position: relative;
+    top: 50px;
+    cursor: pointer;
+}
+
+.envelope{
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background: #f08080;
+    display: grid;
+    place-items: center;
+}
+
+.envelope::before{
+	content: '';
+	position: absolute;
+	width: 212px;
+	height: 212px;
+	background: #f08080;
+	transform: rotate(45deg);
+	top: -105px;
+	left: 44px;
+	border-radius: 30px 0 0 0;
+}
+.front{
+	position: absolute;
+	border-right: 180px solid #7e6b7d;
+	border-top: 95px solid transparent;
+	border-bottom: 100px solid transparent;
+	left: 120px;
+	top: 5px;
+	width: 0;
+	height: 0;
+	z-index:10;
+}
+.front::before{
+	position: absolute;
+	content: '';
+	border-left: 300px solid #fda996;
+	border-top: 195px solid transparent;
+	left: -120px;
+	top: -95px;
+}
+.card{
+	position: relative;
+	width: 250px;
+	height: 180px;
+	background: #fff;
+	border-radius: 2px;
+	display: grid;
+	place-items: center;
+	transition: 1s;
+}
+.card::before{
+	content: '';
+	position: absolute;
+	top:10px;
+	left: 10px;
+	right: 10px;
+	bottom: 10px;
+	border: 2px solid #003049;
+	border-style: dashed;
+}
+.val:hover .card{
+	transform: translateY(-100px);
+}
+.card .text{
+	font-family: 'Brush Script MT', cursive;
+	font-size: 28px;
+	text-align: center;
+}
+.stars, .clouds {
+	display: block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.stars {
+	position: absolute;
+	z-index: 0;
+	background: #000 url('https://i.ibb.co/g91MwKZ/stars.png') repeat top center;
+	width: 100%;
+	height: 100%;
+}
+
+.clouds {
+	position: absolute;
+	z-index: 3;
+	background: transparent url('https://i.ibb.co/BsG8rYZ/clouds.png') repeat top center;
+	animation: move-clouds-back 200s linear infinite;
+	width: 100%;
+	height: 100%;
+}
+
+@keyframes move-twink-back {
+	from {background-position: 0 0;}
+	to {background-position: -10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+	from {background-position: 0 0;}
+	to {background-position: 10000px 0;}
+}
